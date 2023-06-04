@@ -1,4 +1,4 @@
-import type { Title } from "./types";
+import type { Title } from "./api";
 import { config } from "./config";
 
 class Retitles {
