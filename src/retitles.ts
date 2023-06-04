@@ -51,10 +51,10 @@ export const retitles: Retitles = {
 
 	checkTypes: function (options) {
 		if (
-			typeof options !== undefined &&
-			typeof options.title === "string" &&
-			typeof options.subtitle === "string" &&
-			typeof options.count === "number"
+			typeof options === "object" &&
+			typeof options?.title === "string" &&
+			typeof options?.subtitle === "string" &&
+			typeof options?.count === "number"
 		) {
 			return true;
 		} else {
