@@ -2,17 +2,12 @@
   "name": "retitles",
   "author": "@kirademiurge",
   "description": "it will be my first javascript library for dynamically changing title and icon of web applications in any javascript ui library",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "license": "MIT",
   "keywords": ["js", "javascript", "ts", "typescript"],
-  "main": "./build/retitles.js",
-  "types": "./types/index.d.ts",
-  "exports": {
-    ".": {
-      "default": "./build/retitles.js",
-      "types": "./types/index.d.ts"
-    }
-  },
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "exports": "./build/index.js",
   "scripts": {
     "build": "tsc"
   },
