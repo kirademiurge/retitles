@@ -37,6 +37,15 @@ export const retitles: Retitles = {
 					${this.subtitle ? this.subtitle : ""}
 				`;
 				break;
+
+			case 2:
+				document.title = `
+					${this.count ? `(${this.count})` : ""}
+					${this.title ? this.title : ""}
+					${this.title && this.subtitle ? "/" : ""}
+					${this.subtitle ? this.subtitle : ""}
+				`;
+				break;
 		}
 	},
 
