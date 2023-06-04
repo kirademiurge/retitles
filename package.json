@@ -4,8 +4,9 @@
   "description": "it will be my first javascript library for dynamically changing title and icon of web applications in any javascript ui library",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "build/index.js",
-  "module": "build/index.js",
+  "main": "build/retitles.js",
+  "module": "build/retitles.js",
+  "keywords": ["js", "javascript", "ts", "typescript"],
   "devDependencies": {
     "typescript": "^5.1.3"
   }
