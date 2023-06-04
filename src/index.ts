@@ -1,24 +1,28 @@
-import { Retitles } from "./api/types";
+import { Title } from "./api";
 import { config } from "./config";
 
-export const retitles: Retitles = {
-	title: config.DEFAULT_TITLE,
-	subtitle: "",
-	count: 0,
-	viewstyle: config.DEFAULT_VIEWSTYLE,
+class Retitles {
+	private title: string = config.DEFAULT_TITLE;
+	private subtitle: string = "";
+	private count: number = 0;
+	private viewstyle: number = config.DEFAULT_VIEWSTYLE;
 
-	setTitle: function (options) {
+	constructor(title: string = config.DEFAULT_TITLE) {
+		if (typeof title === "string") this.title = title;
+	};
+
+	public setTitle(options: Title) {
 		if ( this.checkTypes(options) ) {
 			this.title = options.title ? options.title : "";
 			this.subtitle = options.subtitle ? options.subtitle : "";
 			this.count = options.count ? options.count : 0;
 			this.viewstyle = options.viewstyle && config.ENABLED_VIEWSTYLES.includes(options.viewstyle) ? options.viewstyle : config.DEFAULT_VIEWSTYLE;
 
-			this.updatedView();	
+			this.updateView();	
 		}
-	},
+	};
 
-	updatedView: function () {
+	private updateView() {
 		switch (this.viewstyle) {
 			case 0:
 				document.title = `
@@ -47,9 +51,9 @@ export const retitles: Retitles = {
 				`;
 				break;
 		}
-	},
+	};
 
-	checkTypes: function (options) {
+	private checkTypes(options: Title) {
 		if (
 			typeof options === "object" &&
 			typeof options?.title === "string" &&
@@ -60,5 +64,7 @@ export const retitles: Retitles = {
 		} else {
 			return false;
 		}
-	},
+	};
 }
+
+window.retitles = new Retitles();
