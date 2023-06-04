@@ -1,4 +1,4 @@
-import { Title } from "./api";
+import type { Title } from "./types";
 import { config } from "./config";
 
 class Retitles {
@@ -11,15 +11,13 @@ class Retitles {
 		if (typeof title === "string") this.title = title;
 	};
 
-	public setTitle(options: Title) {
-		if ( this.checkTypes(options) ) {
-			this.title = options.title ? options.title : "";
-			this.subtitle = options.subtitle ? options.subtitle : "";
-			this.count = options.count ? options.count : 0;
-			this.viewstyle = options.viewstyle && config.ENABLED_VIEWSTYLES.includes(options.viewstyle) ? options.viewstyle : config.DEFAULT_VIEWSTYLE;
+	public setTitle(options: Title = {}) {
+		this.title = options.title ? options.title : "";
+		this.subtitle = options.subtitle ? options.subtitle : "";
+		this.count = options.count ? options.count : 0;
+		this.viewstyle = options.viewstyle && config.ENABLED_VIEWSTYLES.includes(options.viewstyle) ? options.viewstyle : config.DEFAULT_VIEWSTYLE;
 
-			this.updateView();	
-		}
+		this.updateView();	
 	};
 
 	private updateView() {
@@ -52,19 +50,6 @@ class Retitles {
 				break;
 		}
 	};
-
-	private checkTypes(options: Title) {
-		if (
-			typeof options === "object" &&
-			typeof options?.title === "string" &&
-			typeof options?.subtitle === "string" &&
-			typeof options?.count === "number"
-		) {
-			return true;
-		} else {
-			return false;
-		}
-	};
 }
 
-window.retitles = new Retitles();
+export const retitles = new Retitles();

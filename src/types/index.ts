@@ -1,6 +1,6 @@
 export type Title = {
 	title?: string,
 	subtitle?: string,
-	count?: 0,
+	count?: number,
 	viewstyle?: number,
 };
