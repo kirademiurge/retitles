@@ -31,7 +31,7 @@ export const App = () => {
 };
 ```
 
-You also can just add `setTitle` function in the top of your page components for setting the title.
+You also can just add `setTitle` function to the top of your page components for setting the title.
 ```tsx
 import {retitles} from "retitles";
 
