@@ -11,7 +11,7 @@ In future releases, we will add the ability for changing the icon too.
 
 ## How to use
 The better way for using it is creating a reactive states for needed properties and changing the view in effects.
-```ts
+```tsx
 import {retitles} from "retitles";
 import { createEffect, createSignal } from "solid-js";
 
@@ -27,6 +27,19 @@ export const App = () => {
       <h2>Count: {getCount()}</h2>
       <button onClick={ () => setCount( getCount() + 1 ) }>add new message</button>
     </div>
+  );
+};
+```
+
+You also can just add `setTitle` function in the top of your page components for setting the title.
+```tsx
+import {retitles} from "retitles";
+
+export const App = () => {
+  retitles.setTitle({title: "Main Page"});
+
+  return (
+    <div>app</div>
   );
 };
 ```
