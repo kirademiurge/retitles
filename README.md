@@ -1,11 +1,10 @@
 # Retitles
-
-## Description
 Javascript library for dynamically changing the title and icon of web applications in any javascript framework.
 
+## Description
 We know that a lot of modern web applications work like SPA (single page application), so because of it, we should think about how to do the changing the titles and icons of different pages more comfortable and easier. This library helps for more better manipulating the view of the titles of your web apps. Our library has properties like `title`, `subtitle`, `count`, so it can be used for a lot of different types of different projects (messenger, social media, etc). You also can change the view style with `viewstyle` property. Our library is not connected to any framework, so you can use it where you want.
 
-In future releases, we will add the ability for changing the icon too.
+*In future releases, we will add the ability for changing the icon too.*
 
 ## How to use
 The better way for using it is creating a reactive states for needed properties and changing the view in effects.
