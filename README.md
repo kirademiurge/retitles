@@ -7,7 +7,7 @@ We know that a lot of modern web applications work like SPA (single page applica
 *In future releases, we will add the ability for changing the icon too.*
 
 ## How to use
-The better way for using it is creating a reactive states for needed properties and changing the view in effects.
+The better way for using it is creating reactive states for needed properties and changing the view in effects.
 ```tsx
 import {retitles} from "retitles";
 import { createEffect, createSignal } from "solid-js";
@@ -65,7 +65,7 @@ retitles.setTitle({title: "Chat", count: "16"}); // (16) Chat
 
 Different view styles:
 ```ts
-retitles.setTitle({title: "Chat", subtitle: "Messages", count: "16"}); // (16) Messages | Chat
+retitles.setTitle({title: "Chat", subtitle: "Messages", count: "16", viewstyle: 0}); // (16) Messages | Chat
 retitles.setTitle({title: "Chat", subtitle: "Messages", count: "16", viewstyle: 1}); // (16) Chat - Messages
 retitles.setTitle({title: "Chat", subtitle: "Messages", count: "16", viewstyle: 2}); // (16) Chat / Messages
 ```
